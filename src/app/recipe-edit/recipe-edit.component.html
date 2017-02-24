@@ -1,0 +1,78 @@
+<form>
+  <md-list>
+    <md-list-item>
+    <label>
+      <span>
+        <md-input-container>
+          <input mdInput placeholder="Recipe Name" [(ngModel)]="recipe.name" name="name">
+        </md-input-container>
+      </span>
+    </label>
+    </md-list-item>
+    <md-list-item>
+    <label>
+      <span>
+        <md-input-container>
+          <input mdInput placeholder="Description" [(ngModel)]="recipe.desc" name="desc">
+        </md-input-container>
+      </span>
+    </label>
+    </md-list-item>
+    <md-list-item>
+    <label>
+      <span>
+        <md-input-container>
+          <input mdInput placeholder="Prep Time" [(ngModel)]="recipe.time" name="time">
+        </md-input-container>
+      </span>
+    </label>
+    </md-list-item>
+    <md-list-item>
+    <label>
+      <span>
+        <md-input-container>
+          <input mdInput placeholder="Servings" [(ngModel)]="recipe.servings" name="servings">
+        </md-input-container>
+      </span>
+    </label>
+    </md-list-item>
+    <md-list-item>
+      <label>
+    <span>
+      <md-select placeholder="Category" [(ngModel)]="recipe.category" name="category">
+        <md-option *ngFor="let cat of categories" [value]="cat">{{cat}}</md-option>
+      </md-select>
+      <!--<md-input-container>-->
+      <!--<input mdInput placeholder="Category" [(ngModel)]="recipe.category" name="category">-->
+      <!--</md-input-container>-->
+    </span>
+      </label>
+    </md-list-item>
+    <md-list-item>
+      <label>
+      <span>
+        <md-checkbox [(ngModel)]="recipe.shoppingList" name="sl">Shopping List</md-checkbox>
+      </span>
+      </label>
+    </md-list-item>
+  </md-list>
+  <div class="vert-spacing"></div>
+  <label>
+    <span>
+      <md-input-container>
+        <textarea mdInput md-autosize minRows="3" style="width: 220px;" placeholder="Instructions" [(ngModel)]="recipe.instructions" name="instr"></textarea>
+      </md-input-container>
+    </span>
+  </label>
+
+
+
+</form>
+
+<md-toolbar>
+  <button md-fab color="primary" (click)="cancelUpdate()"><md-icon>close</md-icon></button>
+  <div class="horz-spacing"></div>
+  <button md-fab color="warn" (click)="delete()"><md-icon>delete circle</md-icon></button>
+  <div class="horz-spacing"></div>
+  <button md-fab color="accent"(click)="update()"><md-icon>check circle</md-icon></button>
+</md-toolbar>
